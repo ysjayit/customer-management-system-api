@@ -28,7 +28,7 @@
 - Run application
 `php artisan serve`
 
-#### Docker Setup
+#### Docker Setup (Optional)
 - It requires a machine with Docker installed.
 - Update below .env parameters. `DB_HOST, DB_PORT, DB_CONNECTION` exactly as shown below and `DB_DATABASE, DB_USERNAME, DB_PASSWORD` as your choice.
 `DB_HOST=db`
