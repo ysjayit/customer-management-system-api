@@ -28,6 +28,24 @@
 - Run application
 `php artisan serve`
 
+#### Docker Setup
+- It requires a machine with Docker installed.
+- Update below .env parameters. `DB_HOST, DB_PORT, DB_CONNECTION` exactly as shown below and `DB_DATABASE, DB_USERNAME, DB_PASSWORD` as your choice.
+`DB_HOST=db`
+`DB_PORT=3306`
+`DB_DATABASE=<database_name>`
+`DB_USERNAME=<database_user_name>`
+`DB_PASSWORD=<database_user_password>`
+`DB_CONNECTION=mysql`
+- Update `docker-compose/mysql/init/01-databaes.sql` file according to the changes made above.
+- Run container `docker-compose up -d --build`
+- Check the status `docker-compose ps` you should see three containers are running.
+- Bash in to the container to install composer dependencies and run application commands `docker-compose exec app bash`
+`composer install`
+`php artisan key:generate`
+`php artisan migrate`
+- Application is accessible under http://localhost:8005
+
 #### REST API
 
 ##### User registration
